@@ -87,7 +87,7 @@ public class PersonalRecordsPage extends JPanel implements ColourRepository, Fon
 
         BufferedImage reflexImage = ImageIO.read(new File("./images/Reflex.png"));
         ImageIcon reflexIcon = new ImageIcon(reflexImage);
-        JLabel reflexLabel = new JLabel("Cognitive Ability", reflexIcon, SwingConstants.CENTER);
+        JLabel reflexLabel = new JLabel("Reflex", reflexIcon, SwingConstants.CENTER);
         reflexLabel.setFont(HELVETICA_NEUE_LIGHT_SUBHEADING_BOLD);
         reflexLabel.setForeground(ACCENT_COLOUR);
         reflexLabel.setVerticalTextPosition(SwingConstants.BOTTOM);
