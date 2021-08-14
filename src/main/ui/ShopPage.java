@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class ShopPage extends JPanel implements FontRepository {
+public class ShopPage extends JPanel implements ColourRepository, FontRepository {
 
     public ShopPage() throws IOException {
         setPreferredSize(new Dimension(1440, 847));
@@ -22,6 +22,7 @@ public class ShopPage extends JPanel implements FontRepository {
         add(learnLabel, gridBagConstraints);
         JButton backButton = new JButton("ᐸ");
         backButton.setFont(HELVETICA_NEUE_LIGHT_SUBHEADING_BOLD);
+        backButton.setForeground(ACCENT_COLOUR);
         backButton.setPreferredSize(new Dimension(50, 50));
         backButton.addActionListener(event -> {
             try {

@@ -28,6 +28,7 @@ public class PlayPage extends JPanel implements ColourRepository, FontRepository
         titlePanel.setPreferredSize(new Dimension(1440, 150));
         titlePanel.setBackground(ACCENT_COLOUR);
         backButton.setFont(HELVETICA_NEUE_LIGHT_SUBHEADING_BOLD);
+        backButton.setForeground(ACCENT_COLOUR);
         backButton.setPreferredSize(new Dimension(50, 50));
         backButton.addActionListener(event -> {
             try {
@@ -98,6 +99,7 @@ public class PlayPage extends JPanel implements ColourRepository, FontRepository
         cognitiveAbilityButton.setFont(HELVETICA_NEUE_LIGHT_SUBHEADING_BOLD);
         cognitiveAbilityButton.setForeground(Color.WHITE);
         cognitiveAbilityButton.setBackground(ACCENT_COLOUR);
+        cognitiveAbilityButton.addActionListener(event -> initializeChessPage());
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new Insets(0, 0, 50, 25);
@@ -135,6 +137,7 @@ public class PlayPage extends JPanel implements ColourRepository, FontRepository
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         personalRecordsButton.setPreferredSize(BUTTON_DIMENSIONS);
         personalRecordsButton.setFont(HELVETICA_NEUE_LIGHT_SUBHEADING_BOLD);
+        personalRecordsButton.setForeground(ACCENT_COLOUR);
         personalRecordsButton.addActionListener(event -> {
             try {
                 initializePersonalRecordsPage();
@@ -146,6 +149,16 @@ public class PlayPage extends JPanel implements ColourRepository, FontRepository
         gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new Insets(0, 25, 0, 0);
         buttonsPanel.add(personalRecordsButton, gridBagConstraints);
+    }
+
+    private void initializeChessPage() {
+        ChessPage chessPage = new ChessPage();
+        SwingUtilities.getWindowAncestor(this).add(chessPage);
+        revalidate();
+        repaint();
+        SwingUtilities.getWindowAncestor(this).remove(this);
+        revalidate();
+        repaint();
     }
 
     private void initializePersonalRecordsPage() throws IOException {

@@ -24,6 +24,7 @@ public class JournalPage extends JPanel implements ColourRepository, FontReposit
         titlePanel.setPreferredSize(new Dimension(1440, 150));
         titlePanel.setBackground(ACCENT_COLOUR);
         backButton.setFont(HELVETICA_NEUE_LIGHT_SUBHEADING_BOLD);
+        backButton.setForeground(ACCENT_COLOUR);
         backButton.setPreferredSize(new Dimension(50, 50));
         backButton.addActionListener(event -> {
             try {
