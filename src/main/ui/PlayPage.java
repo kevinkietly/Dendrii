@@ -113,6 +113,7 @@ public class PlayPage extends JPanel implements ColourRepository, FontRepository
         memoryButton.setFont(HELVETICA_NEUE_LIGHT_SUBHEADING_BOLD);
         memoryButton.setForeground(Color.WHITE);
         memoryButton.setBackground(ACCENT_COLOUR);
+        memoryButton.addActionListener(event -> new CardMatchingGame());
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new Insets(0, 25, 50, 0);
@@ -159,6 +160,10 @@ public class PlayPage extends JPanel implements ColourRepository, FontRepository
         SwingUtilities.getWindowAncestor(this).remove(this);
         revalidate();
         repaint();
+    }
+
+    private void initializeCardMatchingGame() {
+
     }
 
     private void initializePersonalRecordsPage() throws IOException {
